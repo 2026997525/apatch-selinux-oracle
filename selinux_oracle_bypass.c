@@ -74,9 +74,9 @@
 #include <linux/errno.h>
 
 KPM_NAME("selinux_oracle_bypass");
-KPM_VERSION("1.7.1");
+KPM_VERSION("1.7.2b");
 KPM_LICENSE("GPL v2");
-KPM_AUTHOR("Wenpiner");
+KPM_AUTHOR("Wenpiner,xiaoze");
 KPM_DESCRIPTION("Block SELinux side-channel probes; keywords configurable");
 
 #define SCAN_LIMIT      96
