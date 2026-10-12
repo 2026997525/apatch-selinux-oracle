@@ -123,8 +123,27 @@ static unsigned long g_blocks;
 static char *(*p_get_task_comm)(char *to, unsigned long len, void *tsk);
 
 static const char *const g_defaults[] = {
-    "magisk", "kernelsu", "kernel_su", "ksud", "supolicy",
-    ":su:", ":su\n",
+    // 原有基础
+    "magisk", "kernelsu", "kernel_su", "ksud", "supolicy", ":su:", ":su\n",
+    "sukisu", "kernelsu_next", "apatch", "lsposed", "zygisk", // 保留通用词防其他内核
+    
+    // 从设备底层精准抓取到的真实类型标签
+    "magisk_file",
+    "ksu_file",
+    "xposed_file",
+    "xposed_data",
+    "su_key",
+    "su_exec",
+    "anti_root_dialog",
+    
+    // 进程域变种
+    "u:r:magisk:s0", "u:r:ksu:s0", "u:r:su:s0",
+    
+    // 文件标签变种
+    "u:object_r:magisk_file:s0",
+    "u:object_r:ksu_file:s0",
+    "u:object_r:xposed_file:s0",
+    "u:object_r:xposed_data:s0"
 };
 #define NR_DEFAULTS (sizeof(g_defaults) / sizeof(g_defaults[0]))
 
